@@ -1,6 +1,6 @@
 import base64
-#import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
+import timeit
 
 
 class Tx:
@@ -11,7 +11,8 @@ class Tx:
 		self.key = key
 		self.message = message
 
-	def encode(self, key, clear):
+	@staticmethod
+	def encode(key, clear):
 		enc = []
 		for i in range(len(clear)):
 			key_c = key[i % len(key)]
@@ -20,10 +21,16 @@ class Tx:
 		return base64.urlsafe_b64encode("".join(enc).encode()).decode()
 
 	def send(self, message):
-		publish.single(self.topic, self.encode(self.key, self.message), hostname=self.broker)
+		publish.single(self.topic, self.encode(self.key, message), hostname=self.broker)
+
+	def send_unenc(self, message):
+		publish.single(self.topic, message, hostname=self.broker)
 
 
 print(Tx.__doc__)
 
-transmitter = PfMqttTx("lolcake/1", "broker.hivemq.com", "keykeykey", "")
-transmitter.send("keykey")
+transmitter = Tx("lolcake/1", "broker.hivemq.com", "keykeykey", "")
+# transmitter.send("keykey")
+# transmitter.send_unenc("HERE COMES SNAKEY")
+print("Encrypted send took: " + str(timeit.timeit(lambda: transmitter.send("HERE COMES SNAKEY, LOL"), number=1)) + " ms")
+print("Unencrypted send took: " + str(timeit.timeit(lambda: transmitter.send_unenc("HERE COMES SNAKEY, LOL"), number=1)) + " ms")
