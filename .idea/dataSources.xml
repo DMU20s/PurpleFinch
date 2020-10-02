@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="pfdb" uuid="69080ca7-bde3-46a3-a632-72bf384a9137">
+    <data-source source="LOCAL" name="pfdb" uuid="c896b041-df07-4876-b310-a4376a24d61c">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\ugh\Documents\GitHub\PurpleFinch\pflib\pf-db\pfdb.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/pflib/pf-db/pfdb.db</jdbc-url>
       <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.31.1/sqlite-jdbc-3.31.1.jar</url>
+        </library>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.31.1/sqlite-jdbc-3.31.1.jar</url>
         </library>
