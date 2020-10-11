@@ -5,11 +5,10 @@ import timeit
 
 class Tx:
 	"""MQTT transmitter class for PurpleFinch."""
-	def __init__(self, topic, broker, key, message):
+	def __init__(self, topic, broker, key):
 		self.topic = topic
 		self.broker = broker
 		self.key = key
-		self.message = message
 
 	@staticmethod
 	def pseudoencode(key, clear):
@@ -25,3 +24,5 @@ class Tx:
 
 	def send_unenc(self, message):
 		publish.single(self.topic, message, hostname=self.broker)
+
+
