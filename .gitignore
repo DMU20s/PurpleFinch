@@ -2,6 +2,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/intellij,osx,macos,python3,django
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij,osx,macos,python3,django
 
+.idea/*
+
 ### Django ###
 *.log
 *.pot
