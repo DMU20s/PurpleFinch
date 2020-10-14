@@ -6,7 +6,7 @@
 This is the "core" part, that receives, manages and makes data available.
 
 # Ok, but like.. wtf is PurpleFinch ?
-Imagine Elastic, but for bot IoT and monitoring needs.  
+The PurpleFinch (pf) project aims to collect data and turn it into deliverable information and decisions.  
 
 The "sources" gather info, and submit it over MQTT.  
 
