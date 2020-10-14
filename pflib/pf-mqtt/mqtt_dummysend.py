@@ -8,16 +8,6 @@ t = Tx("pfgs/rnd", "mqtt.eclipse.org", "lol")
 # t.send_unenc("test")
 
 
-
-
-
-
-
-
-
-
-
-
 while True:
 	sleep(1)
 	data = {
